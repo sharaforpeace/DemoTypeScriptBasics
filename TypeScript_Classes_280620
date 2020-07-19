@@ -1,0 +1,107 @@
+------------------------------------------------------------
+ -- Class 4 (CHP3) - Working with Classes(Day:10-JUN-2020) 
+------------------------------------------------------------
+
+--> Starting with ECMAScript 2015, also know as ECMAScript6, Javascript programmers will be able to build their application using this object-oriented class-based approach
+
+--> In TypeScript, we allow developers to use these techniques now, and compile them down to Javascript that works across all major browsers and platforms, without having to wait for the next version of Javascript
+
+--> Class contains the shape of object. (like protopype of object)
+
+--> Shape which means properties and behaviours
+
+------------------------------------------------------------------  
+--> Inhreitance 
+
+--> In TypeScript, we can use common object-oriented patterns.
+--> One of the most fundamental patterns in class-based programming is being able to extend existing classes to create new ones using inheritance.
+--> extends keyword is used
+--> Derived Class often called as Sub Class and Base Class is often called as Super Class
+
+------------------------------------------------------------------
+--> classes use extends other classes in inheritance
+--> classes use implements other interfaces 
+------------------------------------------------------------------
+--------------------------------------------------------------
+--> ACCESS SPECIFIERS - Working with Classes(Day:11-JUN-2020) 
+--------------------------------------------------------------
+
+--> Access specifiers only applicable to the members of class/interface
+
+--> Public by default (attributes and methods)
+
+  --> In TypeScript, each member is public by default
+  --> You may still mark a member public explicitly  
+ 
+--> Private and # 
+--> ECMAScript Privat Fields
+  --> With TypeScript 3.8, TypeScript supports the new Javascript syntax for private fields:
+  --> Private - soft privacy
+  --> # - Hard privacy
+  --> Hard privacy is really useful for strictly ensuring that nobody can take use of any of your internals. If you're a library author, removing or renaming a private field should never cause a breakign change
+  --> When using ECMAScript # private fields, no subclass ever has to worry about collisions in field naming
+  --> TypeScript currently can't support this feature unless targetting ECMAScript 2015(ES6) targets or higher.
+  
+--> Protected
+  --> The protected modifier acts much like the private modified with the exception that members declared protected can also be accesed within deriving classes
+  --> Contructors can be declared as protected
+------------------------------------------------------------------
+--> Readonly Parameter Properties
+
+ --> Readonly modifier
+   --> You can make properties readonly by using the readonly keyword
+   --> Readonly properties must be initialized at there declartion or in the constructor.
+   
+ --> Parameter properties (very important)
+   --> Parameter properties let you create and initialize a member in one place
+   
+------------------------------------------------------------------   
+
+------------------------------------------------------------
+-- Class 4 (CHP3) - Working with Classes (Day:13-JUN-2020) 
+------------------------------------------------------------ 
+---------------
+ --> Accessors
+---------------   
+	--> TypeScript supports getters/setters as a way of intercepting accesses to a member of an object.
+	--> This gives you a way of having finer-grained control over how a member is accessed on each object
+	--> accessors with a get and no set are automatically inferred to be readonly
+	
+ --> Note Validation can be done in different level
+ --> Html / template level /
+ --> Angular ( template level validation )
+ 
+ --> Validation on typescript level
+ --> template driven / reactive driven validation
+ 
+-----------------------
+ --> Static Properties
+-----------------------
+    --> we can also create static member of a class, those that are visible on the class itself rather than on the instances.
+    
+-----------------------
+ --> Abstract Classes	
+-----------------------
+	--> Abstract classes are base classes from which other classes may be derived.
+	--> They may not be instantiated directly
+	--> Unlike an interface, an abstract class may contain implementation details for its members.
+	--> The abstract keyword is used to define abstract classes as well as abstract method within an abstract class
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

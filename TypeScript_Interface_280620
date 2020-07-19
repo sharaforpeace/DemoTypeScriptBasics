@@ -1,0 +1,69 @@
+-----------------------------------------------------------------------
+ -- Class 3 (CHP4) - Working with Interface (Day:06-JUN-2020) 
+-----------------------------------------------------------------------
+
+--> One of TypeScript's core principles is that type checking focuses on the shape that values have
+
+--> In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contract with code outside of your project.
+
+-->
+-------------------------------------------------
+----- Naming Standard In General
+-------------------------------------------------
+
+variable and method names - camelCasing
+class, interface, enum -  PascalCasing
+keywords - smaller (lowercase)
+const name - CAPS (uppercase)
+
+--> No-Reusable
+--> case 1: Its Reusable
+--> case 2: Type should be clear
+
+---------------- 
+-- optional (?)
+----------------
+--> Interface with optional properties are writeen similar to other interfaces. with each optional property denoted by a "?" at the end of the property name in the declaration.
+
+-------------------- 
+-- Readonly property
+--------------------
+--> Some properties should only be modifiable when an object is first created
+--> TypeScript comes with ReadonlyArrya<T>
+
+--------------------------------------------------------------------------------
+ -- Class 4 (CHP4) - Working with Inteface (Day:10-JUN-2020) -- Basic Demo
+--------------------------------------------------------------------------------
+
+-------------------- 
+-- Function Types
+--------------------
+--> Interfaces are also capable of describing fuction types
+
+-------------------- 
+-- Indexable Types
+--------------------
+--> Indexable types have an index signature that describes the types we can use to index into object, along with the corresponding return types when indexing.
+
+------------------------- 
+-- Interface Inheritances 
+-------------------------
+--> ClassTypes - Implementing an interface
+--> Extending Interface
+--> Interface Extending Classes
+
+--------------------------
+*** END of Interface
+-------------------------
+
+
+
+
+
+
+
+
+
+
+
+

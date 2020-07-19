@@ -1,0 +1,296 @@
+-- intall vs code - Done
+-- Part 1 - TypeScript Agenda  (Day: 03-JUN-2020)
+
+-----------------------------------------------------------------------
+ -- Class 1 - TypeScript Agenda  (Day: 03-JUN-2020)
+-----------------------------------------------------------------------
+
+CHP1:  Getting Started with TypeScript
+CHP2:  Data Types and Variables
+CHP3:  Working with Classes
+CHP4:  Working with Interfaces 
+CHP5:  Generics
+CHP6:  Modules and Namespaces
+  
+-- Create Project in VS Code
+
+------------------------------------------------------------------
+-- 03-JUN-2020 
+
+-- CLASS1 (JS-TYPESCRIPT -2012/2013)
+-- ANGULAR REACT VUE USING TYPESCRIPT
+
+-- REACT - E-COMERCE 
+-- ANGULAR - CRUD ENTERPRICE APP
+
+-- TRANSPILING (TO JAVASCRIPT)
+-- SUPER SET OF JAVASCRIPT
+
+-- TYPESCRIPT EDITORS
+
+   VISUAL STUIO (VS code)
+   Eclipse
+   Atom
+   Sublime Text
+   Emacs
+   Vim
+   
+-- Environment Setup
+ 
+  Node.js Package Manage (npm)
+  https://nodejs.org/en/downlaod
+  Install LTS Version - LTS (Long Term Support)
+  .NET Core (2.1/3.1) is LTS
+   
+  What is npm? (package manager)
+  .NET Nuget Package manger
+  JAVA maven and gradle package manager
+  Gulp Grunt WEBPACK YARN package manager
+     
+------------------------------------------------------------------ 
+-- The TypeScript Complier
+   
+   npm install --save-dev-typescript // As dev dependency
+   npm install -g typescript //Install as a global module
+   npm install -g typescript@latest
+   
+------------------------------------------------------------------  
+-- To check the version of any package installed
+  node -v
+	npm -v
+	tsc -v
+	
+------------------------------------------------------------------
+-- Advantages of TypeScript Over JavaScript
+   
+   1. Typescript helps developer by indicating errors during compilation time. whereas JavaScript points out at runtime.
+   2. TypeScript supports strong typed
+   3. Lots of Tooling Support
+   4. It has namespace, module concepts and more on top of what Javascript has.
+   
+   Note: Typescript (.ts) transpile to Javascript
+   
+------------------------------------------------------------------
+-- Features of TypeScript
+ 
+    1. Object-Oriented Language
+	2. TypeScript supports Javascript libraries
+	3. TypeScript is portable
+	4. TypeScript is Transpiled to JavaScript
+	5. TypeScript is developed and maintained by Microsoft under the Apache 2 license
+	
+------------------------------------------------------------------  
+-- tsconfig.json
+
+    1. The tsconfig.json file specifies the root files and the compiler options required to compile the project
+	2. A project is compiled in one of the following ways
+	   2.1 By Invoking tsc with no input files, in which case the compiler searches for the tsconfig.json file starting in the current directory and continuning up the parent directory chain
+	   2.2 By invoking tsc with no input files and a --porject / -p command line option that specifies the path of a directory containing a tsconfig.json
+	   2.3 when input files are specified on the command line, tsconfig.json files are ignored.   
+   
+------------------------------------------------------------------ 
+-- Install type script 
+   
+   npm install -g typescript 
+   
+   -- note: tsc only avail after install
+   
+   npm init --> package.json
+   tsc --init --> tsconfig.json
+   
+-----------------------------------------------------------------------
+ -- Class 2 - TypeScript Basic Types  (Day:04-JUN-2020) -- Basic Demo
+-----------------------------------------------------------------------
+
+ 
+ 1. npm init (package.json)
+ 2. npm install -g typescript  (3.9.3)
+ 3. tsc --init  (tsconfig.json)
+ 4. npm install
+ 5. npm install --save-dev typescript
+ 6. npm install --save-dev esmodules-dev-server
+ 7. package.json  ["serve": "node node_modules/esmodules-dev-server"]
+ 8. tsc 
+ 9. npm run serve
+10. tsc --watch
+
+------------------------------------------------------------------
+
+  tsconfig.json
+  -- compiler option
+   "outDir": "./dist",   /* Redirect output structure to the directory. */
+  
+------------------------------------------------------------------
+ npm run
+ tsc
+ -- ECMA2015 (standard) 
+ -- es5 doesnot support modules, 
+ -- commonjs support modules in es5
+ -- es2015 support module with commonjs
+ 
+------------------------------------------------------------------
+
+
+------------------------------------------------------------------
+ -- Class 2 - TypeScript Basic Types  (Day:04-JUN-2020)
+------------------------------------------------------------------
+
+ number ( also decimal, Hex, Oct )
+ string
+ Template String (`)  -- used to string computation easy way
+ 
+-----
+Array 
+-----
+  -- note array can be declared two ways
+  -- Normal datype[]
+  -- Generics Array<T>
+  
+ -->  TypeScript, like Javascript, allows you to work with arrays of values
+ --> Array types can be written in one of two ways.
+    In the first, you use the type of the element followed by [] to denote an array of that element type.
+    eg: let list:number[] = [1,2,3];
+	
+ --> The second way uses a generic array type,
+    Array<elementType> 
+	eg: let list: Array<number> = [1,2,3];
+	
+-------
+Tuple
+-------
+  --> Tuple types allow you to express an array with a fixed number of elements whose types are known, but need not be the same.
+  i.e. you may want to represent a value as a pair of string and a number.
+  eg: let x: [string, number];
+       x = ["hello", 10];
+	   x = [10, "hello"]; //Error
+	   
+	  let optX : [number, string?];  //? used to specify optional - optional attribute it has to be at last after required attribute	  
+	
+    NOTE: TypeScript is case-sensitive. This means that TypeScript differentiates between uppercase and lowercase characters.
+  	 
+-----------------------------------------------------------------------
+ -- Class 3 - TypeScript Basic Types  (Day:06-JUN-2020) -- Basic Demo
+-----------------------------------------------------------------------
+  
+-------
+Enum
+-------
+ --> As in language like C#, an enum is a way of giving more friendly names to sets of numeric values.
+ 
+ eg: enum Color {RED, GREEN, BLUE}
+	 let c:Color = Color.GREEN;
+	  
+-------
+Any
+-------
+  --> We may need to describe the type of variables that we do not know when we are writting an application
+  --> These values may come from dynamic content
+  --> The any type is a powerful way to work iwth existing JavaScript, allowing you to gradually opt-in and opt-out of type checking during compilation
+  
+  eg: let nsany : any = 4;
+      let list:any[] = [1, 'Hi', True];
+
+-------
+Void
+------- 
+  --> void is a little like the opposite of any.
+  --> Declaring varialbes of type void is not usefull because you can only assign null
+
+---------------------
+Null and Undefined
+---------------------
+  --> In TypeScript, both undefined and null actually have their own types.
+  
+-------
+Never
+-------
+  --> The never type represents the type of values that never occur
+  
+  --> Function returning never must have unreachable end points
+  
+  eg: function error(message: string): never {
+           throw new Error(message);
+      }
+
+note: void accept null or undefined but never doesnot accept null or undefined
+  
+-------
+Object
+-------
+  --> Object is a type that represent the non-primitive type,
+     i.e. anything that is not number, string, boolean, bigint, symbol, null or undefined.
+	 
+-------------------------------
+Type assertions (type casting)
+-------------------------------
+  --> Type assertions are a way to tell the compiler "trust me, i know what I'm doing."
+  
+  let someValue : any = "this is a string";
+  let strLength : number = (<string>someValue).length;
+  let someValue : any = "this is a string";
+  let strLength : number = (someValue as string).length;
+
+-------------------------------------------
+Variable Declaration ( let replace var )
+-------------------------------------------
+ 
+ --> let and const are two relatively new types of variable declaration in Javascript
+ --> With TypeScript being a superset of JavaScript, the language naturally supports let and const.
+ --> var declarations have some odd scoping rules.
+ --> When a variable is declared using let it uses what some call lexical-scoping or block-scoping
+ --> Unlike variables declared with var whose scopes leak out to their containing function. block-scoped variables are not visible outside of their nearest containing block or for-loop.
+ 
+ 
+ --> The let keyword was introduced to javascript in ES2015 and is now considered the standard because it's safer than var.
+ 
+-------------------------------
+Const Declarations
+-------------------------------
+ --> const declaration are another way of declaring variables.
+ --> const numLivesForCat = 9;
+ --> They are like let declarations but, as their name implies their value cannot be changed once they are bound.
+ 
+-------------------------------
+Destructuring (array/tuple)
+-------------------------------
+ let [adStart, ... adEnd] = [1, 2, 3, 4, 5];
+ 
+-------------------------------
+Default values
+-------------------------------
+function fncDefaultCheck(one: number, two: string = 'welcome'){
+    let _strval = ` ${ two } in ${ one } `;
+    console.log(_strval);
+}
+fncDefaultCheck(100, 'Global');
+fncDefaultCheck(101);
+
+--------------------------------------------------------------
+Default and optional using Destructuring
+--------------------------------------------------------------
+
+function fncDefaultOptional({ one, two = 'welcome' }: { one: number; two?:string; }){
+    let _strval = ` ${ two } in ${ one } `;
+    console.log(_strval);
+}
+fncDefaultOptional({ one: 100, two: 'Global' });  // custom
+fncDefaultOptional({ one: 100, two: undefined }); // default
+fncDefaultOptional({ one: 101 });    
+
+-------------------------------
+Spread // Example
+-------------------------------
+
+let varSprdA : number[] = [11,12,13];
+let varSprdB : Array<number> = [21,22,23];
+let varSprdC : Array<number> = [];
+console.log(varSprdA);
+console.log(varSprdB);
+varSprdC = [ 1, 2, ...varSprdA, ...varSprdB];
+console.log(varSprdC);
+
+-------------------------------
+--> NOTE: Basic Types Ends 
+-------------------------------
+
+
